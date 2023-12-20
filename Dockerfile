@@ -1,4 +1,4 @@
 FROM node:18
 WORKDIR /app
-COPY docker /app
+COPY ./ /app
 RUN npm install
