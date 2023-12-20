@@ -47,5 +47,5 @@ jobs:
         with:
           push: true
           context: .
-          dockerfile: ./Dockerfile
+          dockerfile: ./
           tags: basileregnault/ci_cd_node_docker:latest
