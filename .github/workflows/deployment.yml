@@ -11,24 +11,12 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Use Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: '18.18'
-
-      - name: Install dependencies
-        run: npm install
-
-      - name: Run tests
-        run: npm test
-
-      - name: Linting with ESLint
-        run: npm run lint
-
       - name: Hadolint
         uses: hadolint/hadolint-action@v3.1.0
         with:
-          dockerfile: ./Dockerfile
+          dockerfile: Dockerfile
+      - run: docker image build -t nodejs_image ./
+      - run: docker run nodejs_image sh -c "npm run lint && npm test && npm run build"
 
   continuous-deployment:
     runs-on: ubuntu-latest
@@ -46,6 +34,5 @@ jobs:
         if: github.event_name == 'pull_request' && github.event.pull_request.base.ref == 'main'
         with:
           push: true
-          context: .
-          dockerfile: ./
+          context: ./
           tags: basileregnault/ci_cd_node_docker:latest
