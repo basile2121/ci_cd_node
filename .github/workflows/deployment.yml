@@ -62,5 +62,5 @@ jobs:
         uses: docker/build-push-action@v4
         with:
           push: true
-          context: ./docker/Dockerfile
+          context: ./
           tags: basileregnault/ci_cd_node_docker:${{ github.ref_name }}
