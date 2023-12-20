@@ -37,7 +37,7 @@ jobs:
       - name: Login to Docker Hub
         uses: docker/login-action@v2
         if: contains('ref/heads/main', github.ref)
-        with: :
+        with:
           username: basileregnault
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
