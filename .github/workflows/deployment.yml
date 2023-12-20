@@ -47,7 +47,6 @@ jobs:
   continuous-delivery:
     runs-on: ubuntu-latest
     if: startsWith(github.ref, 'refs/tags')
-    needs: [ci]
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
