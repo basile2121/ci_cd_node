@@ -32,7 +32,7 @@ jobs:
 
   continuous-deployment:
     runs-on: ubuntu-latest
-    if: contains('ref/heads/main', github.ref)
+    if: github.ref == 'refs/heads/main'
     needs: [ci]
     steps:
       - name: Login to Docker Hub
