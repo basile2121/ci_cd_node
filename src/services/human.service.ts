@@ -63,7 +63,7 @@ export class humanService {
             if (!human) {
                 return null;
             }
-            const basile = await Human.findByIdAndDelete({_id: id});
+             await Human.findByIdAndDelete({_id: id});
             return human;
         } catch (error) {
             logger.error('Service -> deleteHuman : Erreur lors de la suppresion de l\'humain : ' + id + ' ' + error);
