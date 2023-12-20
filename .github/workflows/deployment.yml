@@ -7,6 +7,8 @@ on:
 jobs:
   ci:
     runs-on: ubuntu-latest
+    env:
+      IMAGE_NAME: "mynode:19"
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
@@ -15,8 +17,8 @@ jobs:
         uses: hadolint/hadolint-action@v3.1.0
         with:
           dockerfile: Dockerfile
-      - run: docker image build -t nodejs_image ./
-      - run: docker run nodejs_image sh -c "npm run lint && npm test && npm run build"
+      - run: docker image build --tag="${IMAGE_NAME}" ./
+      - run: docker run "${IMAGE_NAME}" sh -c "npm run lint && npm test && npm run build"
 
   continuous-deployment:
     runs-on: ubuntu-latest
