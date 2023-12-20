@@ -28,7 +28,7 @@ jobs:
       - name: Hadolint
         uses: hadolint/hadolint-action@v3.1.0
         with:
-          dockerfile: docker/Dockerfile
+          dockerfile: ./docker/Dockerfile
 
   continuous-deployment:
     runs-on: ubuntu-latest
