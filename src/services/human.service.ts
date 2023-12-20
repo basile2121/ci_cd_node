@@ -56,7 +56,7 @@ export class humanService {
         }
     }
 
-    //delete a human by using the find by id and delete
+    // Delete a human by using the find by id and delete
     async deleteHuman(id: string) {
         try {
             const human = await Human.findById({_id: id});
