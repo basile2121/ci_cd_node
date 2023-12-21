@@ -44,7 +44,7 @@ class humanController {
                             }
                             else {
                                 // On rend l'animal domestic
-                                yield animal_service_1.animalServices.updateAnimal(animalId, { "isDomestic": true });
+                                yield animal_service_1.animalServices.updateAnimal(animalId, { 'isDomestic': true });
                                 logger_1.logger.info('Controller -> addHuman : Animal : ' + animalId + ' updated');
                             }
                         }
@@ -124,7 +124,7 @@ class humanController {
                 const humans = yield human_service_1.humanServices.getHumansWithHighSalaryAndYoungAge();
                 if (!humans) {
                     logger_1.logger.error('Controller -> getHumansWithHighSalaryAndYoungAge : Humans not found');
-                    return res.status(404).send("Humans not found");
+                    return res.status(404).send('Humans not found');
                 }
                 logger_1.logger.info('Controller -> getHumansWithHighSalaryAndYoungAge : Humans fetch');
                 return res.status(200).send(humans);

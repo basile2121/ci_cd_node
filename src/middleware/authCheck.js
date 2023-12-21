@@ -22,13 +22,13 @@ const checkAuth = (req, res, next) => __awaiter(void 0, void 0, void 0, function
         jsonwebtoken_1.default.verify(token, secret, (err, decodedToken) => __awaiter(void 0, void 0, void 0, function* () {
             if (err) {
                 res.locals.user = null;
-                res.cookie("jwt", "", { maxAge: 1 });
-                return res.status(403).json({ error: "Bad token" });
+                res.cookie('jwt', '', { maxAge: 1 });
+                return res.status(403).json({ error: 'Bad token' });
             }
             const user = yield user_model_1.User.findById(decodedToken.id);
             res.locals.user = user;
             if (!res.locals.user) {
-                res.cookie("jwt", "", { maxAge: 1 });
+                res.cookie('jwt', '', { maxAge: 1 });
                 return res.status(403).json({ error: "User doesn't exist" });
             }
             next();
@@ -36,7 +36,7 @@ const checkAuth = (req, res, next) => __awaiter(void 0, void 0, void 0, function
     }
     else {
         res.locals.user = null;
-        return res.status(403).json({ error: "Not authorized" });
+        return res.status(403).json({ error: 'Not authorized' });
     }
 });
 exports.checkAuth = checkAuth;
