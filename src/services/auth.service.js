@@ -19,7 +19,7 @@ const jsonwebtoken_1 = __importDefault(require("jsonwebtoken"));
 const findOne = (data) => __awaiter(void 0, void 0, void 0, function* () {
     const user = yield user_model_1.User.findOne(data);
     if (!user) {
-        throw Error("User not found");
+        throw Error('User not found');
     }
     return user;
 });
@@ -28,7 +28,7 @@ const register = (data) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const user = yield user_model_1.User.findOne({ email: data.email });
         if (user) {
-            return new Error("Email already exists");
+            return new Error('Email already exists');
         }
         const newUser = new user_model_1.User(data);
         return newUser.save();
@@ -42,7 +42,7 @@ const login = (email, password) => __awaiter(void 0, void 0, void 0, function* (
     try {
         const user = yield loginCompare(email, password);
         if (!user) {
-            return new Error("Incorrect credentials");
+            return new Error('Incorrect credentials');
         }
         return user;
     }
@@ -70,8 +70,8 @@ const loginCompare = function (email, password) {
                 user.password = undefined;
                 return user;
             }
-            return new Error("incorrect password");
+            return new Error('incorrect password');
         }
-        return new Error("incorrect email");
+        return new Error('incorrect email');
     });
 };

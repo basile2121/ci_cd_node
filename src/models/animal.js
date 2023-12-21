@@ -40,18 +40,18 @@ exports.AnimalsSchemaValidate = joi_1.default.object({
 const AnimalSchema = new mongoose_1.Schema({
     name: {
         type: String,
-        required: [true, "Name is required"],
+        required: [true, 'Name is required'],
         maxlength: 20
     },
     age: {
         type: Number,
-        required: [true, "Age is required"],
+        required: [true, 'Age is required'],
     },
     isDomestic: {
         type: Boolean,
-        required: [true, "Is Domestic is required"],
+        required: [true, 'Is Domestic is required'],
         default: false
     },
 });
 //creating a models
-exports.Animal = mongoose_1.default.model("animal", AnimalSchema);
+exports.Animal = mongoose_1.default.model('animal', AnimalSchema);

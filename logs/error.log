@@ -334,3 +334,51 @@
   label: 'Civilisation API',
   timestamp: '2023-Dec-20 17:57:49'
 }
+{
+  message: 'Controller -> getAnimals : Error while fetching animals : Error: Some error occurred',
+  level: 'error',
+  label: 'Civilisation API',
+  timestamp: '2023-Dec-21 09:39:54'
+}
+{
+  message: 'Controller -> addAnimal : Error while adding animal. Schema not validate : ValidationError: "age" must be a number',
+  level: 'error',
+  label: 'Civilisation API',
+  timestamp: '2023-Dec-21 09:39:54'
+}
+{
+  message: 'Controller -> addAnimal : Error while adding animal: Error: Some error occurred',
+  level: 'error',
+  label: 'Civilisation API',
+  timestamp: '2023-Dec-21 09:39:54'
+}
+{
+  message: 'Controller -> getOneAnimal : Animal : some_non_existent_id not found',
+  level: 'error',
+  label: 'Civilisation API',
+  timestamp: '2023-Dec-21 09:39:54'
+}
+{
+  message: 'Controller -> getOneAnimal : Error while fetching a single animal : Error: Some error occurred',
+  level: 'error',
+  label: 'Civilisation API',
+  timestamp: '2023-Dec-21 09:39:54'
+}
+{
+  message: 'Controller -> updateAnimal : Animal : some_non_existent_id not found',
+  level: 'error',
+  label: 'Civilisation API',
+  timestamp: '2023-Dec-21 09:39:54'
+}
+{
+  message: 'Controller -> updateAnimal : Error while updating animal : Error: Some error occurred',
+  level: 'error',
+  label: 'Civilisation API',
+  timestamp: '2023-Dec-21 09:39:54'
+}
+{
+  message: 'Controller -> deleteAnimal : Animal : some_non_existent_id not found',
+  level: 'error',
+  label: 'Civilisation API',
+  timestamp: '2023-Dec-21 09:39:54'
+}

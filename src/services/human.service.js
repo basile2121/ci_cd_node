@@ -30,7 +30,7 @@ class humanService {
     getHumans() {
         return __awaiter(this, void 0, void 0, function* () {
             try {
-                return yield human_1.Human.find({}).populate("animals");
+                return yield human_1.Human.find({}).populate('animals');
             }
             catch (error) {
                 logger_1.logger.error('Service -> getHumans : Erreur lors de la récupération des humains :' + error);
@@ -42,7 +42,7 @@ class humanService {
     getHuman(id) {
         return __awaiter(this, void 0, void 0, function* () {
             try {
-                const human = yield human_1.Human.findById({ _id: id }).populate("animals");
+                const human = yield human_1.Human.findById({ _id: id }).populate('animals');
                 if (!human) {
                     return null;
                 }
@@ -73,7 +73,7 @@ class humanService {
             }
         });
     }
-    //delete a human by using the find by id and delete
+    // Delete a human by using the find by id and delete
     deleteHuman(id) {
         return __awaiter(this, void 0, void 0, function* () {
             try {
@@ -81,7 +81,7 @@ class humanService {
                 if (!human) {
                     return null;
                 }
-                const humanToDelete = yield human_1.Human.findByIdAndDelete({ _id: id });
+                yield human_1.Human.findByIdAndDelete({ _id: id });
                 return human;
             }
             catch (error) {
@@ -113,7 +113,7 @@ class humanService {
                             $and: [
                                 { salary: { $lte: 1000 } },
                                 { age: { $gte: 40 } },
-                                { city: "Paris" },
+                                { city: 'Paris' },
                             ],
                         },
                     },

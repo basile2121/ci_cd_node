@@ -19,7 +19,7 @@ app.use((0, cookie_parser_1.default)());
 app.use(express_1.default.json());
 app.use(express_1.default.urlencoded({ extended: true }));
 //routes
-app.use("/api/auth", authRouter);
+app.use('/api/auth', authRouter);
 app.use('/api/humans', humanRouter);
 app.use('/api/animals', animalRouter);
 //db connection then server connection

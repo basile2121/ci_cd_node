@@ -44,12 +44,12 @@ exports.HumansSchemaValidate = joi_1.default.object({
 const HumanSchema = new mongoose_1.Schema({
     name: {
         type: String,
-        required: [true, "Name is required"],
+        required: [true, 'Name is required'],
         maxlength: 20
     },
     age: {
         type: Number,
-        required: [true, "Age is required"],
+        required: [true, 'Age is required'],
     },
     city: {
         type: String,
@@ -59,17 +59,17 @@ const HumanSchema = new mongoose_1.Schema({
     },
     isWorking: {
         type: Boolean,
-        required: [true, "Is Working is required"],
+        required: [true, 'Is Working is required'],
         default: false
     },
     salary: {
         type: Number,
-        required: [true, "Age is required"],
+        required: [true, 'Age is required'],
     },
     animals: [{
             type: mongoose_1.default.Schema.Types.ObjectId,
-            ref: "animal",
+            ref: 'animal',
         }]
 });
 //creating a models
-exports.Human = mongoose_1.default.model("human", HumanSchema);
+exports.Human = mongoose_1.default.model('human', HumanSchema);

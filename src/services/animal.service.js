@@ -81,7 +81,7 @@ class animalService {
                 if (!animal) {
                     return null;
                 }
-                const animalToDelete = yield animal_1.Animal.findByIdAndDelete({ _id: id });
+                yield animal_1.Animal.findByIdAndDelete({ _id: id });
                 return animal;
             }
             catch (error) {

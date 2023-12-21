@@ -68,9 +68,9 @@ const login = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
 });
 exports.login = login;
 const logout = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    res.cookie("jwt", "", { maxAge: 1 });
+    res.cookie('jwt', '', { maxAge: 1 });
     logger_1.logger.info('Controller -> logout : Your are now logged out');
-    return res.status(200).json({ message: "Your are now logged out" });
+    return res.status(200).json({ message: 'Your are now logged out' });
 });
 exports.logout = logout;
 const whoami = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
@@ -78,7 +78,7 @@ const whoami = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     user.password = undefined;
     if (!user) {
         logger_1.logger.error('Controller -> whoami : No user found');
-        return res.status(403).json({ error: "No user found" });
+        return res.status(403).json({ error: 'No user found' });
     }
     logger_1.logger.info('Controller -> whoami : Whoami : ' + user.email + ' success');
     return res.status(200).json({ user });

@@ -41,20 +41,20 @@ const bcrypt = __importStar(require("bcrypt"));
 const UserSchema = new mongoose_1.default.Schema({
     firstName: {
         type: String,
-        required: [true, "First name is required"],
+        required: [true, 'First name is required'],
     },
     lastName: {
         type: String,
-        required: [true, "Last name is required"],
+        required: [true, 'Last name is required'],
     },
     email: {
         type: String,
-        required: [true, "Email is required"],
+        required: [true, 'Email is required'],
         unique: true,
     },
     password: {
         type: String,
-        required: [true, "Password is required"],
+        required: [true, 'Password is required'],
     },
     birthday: {
         type: Date,
@@ -66,7 +66,7 @@ const UserSchema = new mongoose_1.default.Schema({
 }, {
     timestamps: true,
 });
-UserSchema.pre("save", function (next) {
+UserSchema.pre('save', function (next) {
     return __awaiter(this, void 0, void 0, function* () {
         if (this.password) {
             const salt = yield bcrypt.genSalt();
@@ -75,4 +75,4 @@ UserSchema.pre("save", function (next) {
         next();
     });
 });
-exports.User = mongoose_1.default.model("user", UserSchema);
+exports.User = mongoose_1.default.model('user', UserSchema);
